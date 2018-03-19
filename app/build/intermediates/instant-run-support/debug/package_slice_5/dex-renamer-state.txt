@@ -1,0 +1,4 @@
+#Thu Mar 01 14:15:14 ICT 2018
+base.0=C\:\\Users\\DELL-PC\\cocosproject\\~\\MyCompany\\MyGame\\frameworks\\runtime-src\\piano.android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\25
+path.0=classes.dex
+renamed.0=classes.dex
