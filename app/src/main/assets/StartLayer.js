@@ -49,7 +49,7 @@ StartLayer.prototype.newBlock = function (i, j) {
     block.setZOrder(100);
     block.setAnchorPoint(cc.p(0.5, 0.5));
 
-    var words = ["Zen", "CocosEditor", "Classic", "Arcade"];
+    var words = ["Bantuan", "", "Mainkan", "Tentang"];
     var wordNum = 0;
     if (j == 0 && i == 1) {
         wordNum = 1
@@ -89,23 +89,63 @@ StartLayer.prototype.onTouchesBegan = function (touches, event) {
                 if (cc.rectContainsPoint(blockRect, this.pBegan)) {
                     cc.AudioEngine.getInstance().playEffect(PIANO_SIMPLE[1 + getRandom(6)], false);
                     if (j == 0 && i == 0) {
-                        GAME_MODE = MODE_ZEN;
-                    } else if (j == 0 && i == 1) {
-                        GAME_MODE = MODE_NOT;
-                    } else if (j == 1 && i == 0) {
-                        GAME_MODE = MODE_CLASSIC;
-                    } else if (j == 1 && i == 1) {
-                        GAME_MODE = MODE_ARCADE;
-                    }
-                    if (GAME_MODE != MODE_NOT) {
-                        //   if (GAME_MODE == MODE_CLASSIC) {
-                        cc.BuilderReader.runScene("", "MainLayer");
-                        //    }
-                    } else {
                         var key = block.label.getString();
-                        if (key == "PPAM") {
+                        if (key == "Bantuan") {
+                            block.label.setString("Tekan Calung");
+                        } else if (key == "Tekan Calung") {
+                            block.label.setString("Bukan");
+                        } else if (key == "Bukan") {
+                            block.label.setString("Yang Putih");
+                        } else if (key == "Yang Putih") {
+                          block.label.setString("Tentang");
+                        } else if (key == "Tentang") {
+                            block.label.setString("Calung");
+                        } else if (key == "Calung") {
+                            block.label.setString("adalah");
+                        } else if (key == "adalah") {
+                            block.label.setString("alat musik");
+                        } else if (key == "alat musik") {
+                              block.label.setString("tradisional");
+                          }
+                          else if (key == "tradisional") {
+                          block.label.setString("sunda");
+                        } else if (key == "sunda") {
+                          block.label.setString("yang terbuat");
+                        } else if (key == "yang terbuat") {
+                          block.label.setString("dari bambu");
+                        } else if (key == "dari bambu") {
+                          block.label.setString("dimainkan");
+                        } else if (key == "dimainkan") {
+                          block.label.setString("dengan cara");
+                        } else if (key == "dengan cara") {
+                          block.label.setString("dipukul");
+                        } else if (key == "dipukul") {
+                            block.label.setString("Siap Main?");
+                          }else if (key == "Siap Main?") {
+                            block.label.setString("Bantuan");
+                          }
+                        //GAME_MODE = MODE_ABOUT; //
+                        //cc.BuilderReader.runScene("", "StartLayer");
+                    } else if (j == 0 && i == 1) {
+
+                    } else if (j == 1 && i == 0) { //play
+                        GAME_MODE = MODE_CLASSIC;
+                        cc.BuilderReader.runScene("", "MainLayer");
+                    } else if (j == 1 && i == 1) {  //tentang
+                        var key = block.label.getString();
+                        if (key == "Tentang") {
+                            block.label.setString("PPAM");
+                        } else if (key == "PPAM") {
                             block.label.setString("Tap-tap-Lung");
-                        } else {
+                        } else if (key == "Tap-tap-Lung") {
+                            block.label.setString("Cakue");
+                        } else if (key == "Cakue") {
+                          block.label.setString("Jundi");
+                        } else if (key == "Jundi") {
+                            block.label.setString("Condro");
+                        } else if (key == "Condro") {
+                            block.label.setString("Afna");
+                        } else if (key == "Afna") {
                             block.label.setString("PPAM");
                         }
                     }

@@ -26,6 +26,7 @@ MODE_NOT = 3;
 GAME_MODE = 0;
 
 require("StartLayer.js");
+require("About.js");
 require("MainLayer.js");
 require("CocosEditor.js");
 require("PianoMusics.js");

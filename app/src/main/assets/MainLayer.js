@@ -43,7 +43,7 @@ MainLayer.prototype.onEnter = function () {
     this.moveNum = 0;
 
     //piano music length
-    this.pianoListIndex = CITY_OF_SKY;
+    this.pianoListIndex = IBU_KARTINI;
     this.pianoLengthIndex = this.pianoListIndex.length;
 
     this.pianoLength = 5;   //init length 5
@@ -82,7 +82,7 @@ MainLayer.prototype.newBlock = function (i, j, colorType) {
         block.setColor(cc.c3b(0, 255, 0));
     } else {
         if (i == colorType) {
-            block.setColor(cc.c3b(30, 30, 30));
+            block.setColor(cc.c3b(92, 51, 23));
             color = "black";
         }
     }
@@ -110,15 +110,14 @@ MainLayer.prototype.createTopOverNode = function () {
     this.scoreNode.bgColor = bgColor;
 
     //mode
-    var wordsMode = ["Classic", "Arcade", "Zen"];
-    var modeLabel = cc.LabelTTF.create(wordsMode[GAME_MODE] + "Mode", "Arial", 70);
+    var modeLabel = cc.LabelTTF.create("Tap-Tap-Lung", "Arial", 70);
     this.scoreNode.addChild(modeLabel);
     modeLabel.setPosition(cc.p(350, 1000));
     modeLabel.setColor(cc.c3b(0, 0, 0));
     modeLabel.setAnchorPoint(cc.p(0.5, 0.5));
 
     //result
-    var resultLabel = cc.LabelTTF.create("Hasil", "Arial", 110);
+    var resultLabel = cc.LabelTTF.create("Berhasil", "Arial", 110);
     this.scoreNode.addChild(resultLabel);
     resultLabel.setPosition(cc.p(360, 750));
     resultLabel.setAnchorPoint(cc.p(0.5, 0.5));
@@ -126,7 +125,7 @@ MainLayer.prototype.createTopOverNode = function () {
     this.scoreNode.result = resultLabel;
 
     //back
-    var backLabel = cc.LabelTTF.create("Back", "Arial", 50);
+    var backLabel = cc.LabelTTF.create("Menu", "Arial", 50);
     this.scoreNode.addChild(backLabel);
     backLabel.setPosition(cc.p(200, 400));
     backLabel.setAnchorPoint(cc.p(0.5, 0.5));
@@ -134,7 +133,7 @@ MainLayer.prototype.createTopOverNode = function () {
     this.scoreNode.back = backLabel;
 
     //return
-    var returnLabel = cc.LabelTTF.create("Return", "Arial", 50);
+    var returnLabel = cc.LabelTTF.create("Main Ulang", "Arial", 50);
     this.scoreNode.addChild(returnLabel);
     returnLabel.setPosition(cc.p(500, 400));
     returnLabel.setAnchorPoint(cc.p(0.5, 0.5));
@@ -226,7 +225,7 @@ MainLayer.prototype.onTouchesBegan = function (touches, event) {
                                 cc.ScaleTo.create(0.2, this.scaleX, this.scaleY)
                             ));
                             this.scoreNode.bgColor.setColor(cc.c3b(255, 0, 0));
-                            this.scoreNode.result.setString("Failed");
+                            this.scoreNode.result.setString("Gagal");
                             this.scoreNode.runAction(cc.MoveTo.create(0.2, cc.p(0, this.blockHeight * this.moveNum)));
                         }
                     }

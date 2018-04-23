@@ -35,7 +35,7 @@ public class Cocos2dMainActivity extends Cocos2dxActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
                 .setTitle("")
-                .setMessage("退出游戏?")
+                .setMessage("Keluar?")
                 .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         System.exit(0);
