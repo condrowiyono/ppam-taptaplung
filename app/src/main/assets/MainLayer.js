@@ -180,7 +180,6 @@ MainLayer.prototype.onTouchesBegan = function (touches, event) {
                         if (j == 0) {
                             return;
                         }
-
                         //touch black
                         if (block.blockData.color == "black") {
                             if (block.blockData.row == (this.moveNum + 1)) {
